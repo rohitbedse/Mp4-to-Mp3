@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@rohitbedse_</title>
+</head>
+<body>
+    <h1>Video to MP3 Converter</h1>
+    <form method="post" action="/">
+        <label for="video_link">Enter Video Link:</label>
+        <input type="text" name="video_link" required>
+        <button type="submit">Convert to MP3</button>
+    </form>
+
+    {% if download_link %}
+        <h2>Download your converted audio:</h2>
+        <a href="{{ url_for('download', filename=download_link) }}" download="converted_audio.mp3">Download MP3</a>
+    {% endif %}
+</body>
+</html>
